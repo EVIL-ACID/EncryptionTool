@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Encryption Tool</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/controller.js" type="module"></script>
+    <script src="https://peterolson.github.io/BigInteger.js/BigInteger.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Encryption Tool</h1>
+      
+      <select id="encryption-type" name="encryption-type">
+        <option value="des" selected="selected">DES</option>
+        <option value="rsa">RSA</option>
+      </select>
+
+      <div class="des-container">
+        
+        <div class="Key-generator">
+          <label for="Key-Generator"> Generate a key </label>          
+          <textarea name="des-key-output" id="des-key-output" cols="30" rows="10" readonly></textarea> 
+          
+          <button type="button" id="generate-des-key">Generate</button>
+        </div>
+        <label for="input-text">Input data:</label>
+        <input type="text" id="des-input-data" name="input-text" placeholder="Enter your data here">
+        <label for="key">Key:</label>
+        <input type="text" id="des-key" name="key" placeholder="Enter your encryption key here" maxlength="8">
+        
+        <textarea name="output" id="des-output" cols="30" rows="10" readonly></textarea>
+      </div>
+
+      <div class="rsa-container" style="display:none;">
+
+        <div class="Key-generator">
+          <label for="Key-Generator"> Generate a key </label>
+          <select name="rsa-key-size-options" id="rsa-key-size">
+  
+            <option value="rsa-keysize512" selected="selected">512 bits</option>
+            <option value="rsa-keysize1024">1024 bits</option>
+          </select>        
+          
+          <label for="rsa-publickey-output">Public key</label>
+          <textarea name="rsa-publickey-output" id="rsa-public-key-output" cols="30" rows="10" readonly></textarea> 
+          <label for="rsa-privatekey-output">Private key</label>
+          <textarea name="rsa-privatekey-output" id="rsa-private-key-output" cols="30" rows="10" readonly></textarea>
+          
+          <button type="button" id="generate-rsa-key">Generate</button> 
+        </div>
+
+        <label for="input-text">Input data:</label>
+        <input type="text" id="rsa-input-data" name="input-text" placeholder="Enter your data here">
+        <label for="key">Key:</label>
+        <input type="text" id="rsa-key" name="key" placeholder="Enter your public/private key here">
+        <textarea name="output" id="rsa-output" cols="30" rows="10" readonly></textarea>
+      </div>
+
+
+      <button type="button" id="encrypt_btn">Encrypt</button>
+      <button type="button" id="decrypt_btn">Decrypt</button>
+      <button type="button" id="clear_btn">Clear</button>
+
+    </div>
+
+  </body>
+</html>
+
+
